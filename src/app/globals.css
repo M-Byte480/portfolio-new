@@ -27,3 +27,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.neon-text {
+  color: #6bdaff;
+  text-shadow: rgb(0, 164, 164) 0 1px 10px, rgba(31, 168, 255, 0.8) 0 1px 14px;
+}

@@ -1,16 +1,19 @@
 type GoToProjectButtonProps = {
     name: string;
     href: string;
+    revealText?: string;
     colours?: string[];
 };
 
-export default function GoToProjectButton({ name, href, colours = ["bg-green-200", "bg-green-400", "bg-green-600"] }: GoToProjectButtonProps) {
+export default function GoToProjectButton({ name, href, revealText="Source Code", colours = ["bg-green-200", "bg-green-400", "bg-green-600"] }: GoToProjectButtonProps) {
     return (
-        <div>
+        <div className="inline-block">
             {/*<!-- From Uiverse.io by Javierrocadev --> */}
             
             <button
-                className="overflow-hidden relative w-full p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer relative z-10 group"
+                className="overflow-hidden relative w-full p-2 h-12 bg-slate-900 text-white 
+                border-2 border-teal-600 rounded-md text-xl font-bold cursor-pointer z-10 group 
+                hover:scale-105 hover:border-emerald-400 transition duration-300 ease-in-out"
                 onClick={() => window.open(href, "_blank")}
             >
 
@@ -26,8 +29,8 @@ export default function GoToProjectButton({ name, href, colours = ["bg-green-200
 
                 {name}
                 <span
-                    className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-1/3 z-10"
-                >Source Code</span
+                    className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-1/2 -translate-x-1/2 z-10"
+                >{revealText}</span
                 >
             </button>
 
